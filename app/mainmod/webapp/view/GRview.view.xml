@@ -1,0 +1,50 @@
+<mvc:View xmlns:smarttable="sap.ui.comp.smarttable" controllerName="com.main.mainmod.controller.GRview"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Page id="grpage">
+    <content>
+    <IconTabBar id="GRtab"
+    expandable="true">
+    <items>
+    <IconTabFilter id="ig1"
+    icon="sap-icon://group"
+    key="Vendor"
+    iconColor="Default"
+    text="Goods Receipt">
+    <content>
+      <smarttable:SmartTable id="GRHeader"
+                            entitySet="GRHead"
+                            exportType="UI5ClientPDF"
+                            enableExport="true"
+                            enableAutoBinding="true"
+                            initiallyVisibleFields="gr_id,gr_number,gr_po,gr_date,gr_stor_loc,gr_status,gr_item_receivedquan" >
+    </smarttable:SmartTable>
+    </content>
+    </IconTabFilter>
+
+    <IconTabFilter id="GRItemtab"
+    icon="sap-icon://group"
+    iconColor="Default"
+    text="Material"
+    >
+    <content>
+    <smarttable:SmartTable id="GRitem"
+                            entitySet="GRItem"
+                            exportType="UI5ClientPDF"
+                            enableExport="true"
+                            enableAutoBinding="true"
+                            initiallyVisibleFields="gr_item_id,gr_item_ref_id,gr_item_po_id,gr_item_poitem_id,gr_item_received_quan,gr_item_uom_uom,gr_item_batchno,gr_item_remarks" >
+    </smarttable:SmartTable>
+    
+    </content>
+    </IconTabFilter>
+    </items>
+    </IconTabBar>
+    
+    
+    </content>
+    </Page>
+
+
+</mvc:View>
+

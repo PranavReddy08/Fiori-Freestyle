@@ -1,0 +1,54 @@
+<mvc:View xmlns:smarttable="sap.ui.comp.smarttable" 
+controllerName="com.main.mainmod.controller.Master"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Page id="tilepage">
+    <content>
+    	
+    <IconTabBar id="mastertab"
+    expandable="true">
+    <items>
+    <IconTabFilter id="filter1"
+    icon="sap-icon://group"
+    key="Vendor"
+    iconColor="Default"
+    text="Vendor">
+    <content>
+      <smarttable:SmartTable id="vendorMaster"
+                            entitySet="vendor"
+                            exportType="UI5ClientPDF"
+                            enableExport="true"
+                            enableAutoBinding="true"
+                            initiallyVisibleFields="vm_id,vm_code,vm_firstname,vm_lastname,vm_addresses_vm_street,vm_addresses_vm_city,vm_addresses_vm_state,vm_addresses_vm_country,vm_addresses_vm_postal,vm_gstno,vm_person,vm_email,vm_payments,is_Active" >
+    </smarttable:SmartTable>
+    </content>
+    </IconTabFilter>
+
+    <IconTabFilter id="Itemtab"
+    icon="sap-icon://group"
+    iconColor="Default"
+    text="Material"
+    >
+    <content>
+    <smarttable:SmartTable id="Material"
+                            entitySet="material"
+                            exportType="UI5ClientPDF"
+                            enableExport="true"
+                            enableAutoBinding="true"
+                            initiallyVisibleFields="mm_id,mm_code,mm_desc,mm_types_raw_material,mm_types_material_srv,mm_types_other,mm_stdprice,mm_uom_uom,mm_gstno,is_Active" >
+    </smarttable:SmartTable>
+    
+    </content>
+    </IconTabFilter>
+    </items>
+    </IconTabBar>
+    
+    
+    </content>
+    
+    
+    
+    </Page>
+
+
+</mvc:View>

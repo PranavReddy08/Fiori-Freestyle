@@ -1,0 +1,61 @@
+<mvc:View xmlns:smarttable="sap.ui.comp.smarttable" controllerName="com.main.mainmod.controller.Mainview"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+    <content>
+    <GenericTile id="tile1" class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header=" Master"
+        subheader=" Master Data" press="tomaster" url="https://www.ust.com/">
+        <TileContent id="Tc1">
+            <ImageContent id="Ic1" src="images/ustlogo.svg" />
+        </TileContent>
+    </GenericTile>
+
+        <GenericTile id="tile2" class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header=" Purchase Order"
+        subheader=" Purchase Order Details" press="topo" url="https://www.ust.com/">
+        <TileContent id="Tc2">
+            <ImageContent id="Ic2" src="images/ustlogo.svg" />
+        </TileContent>
+    </GenericTile>
+ 
+ 
+
+    <GenericTile id="gc1" class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Master Data"
+		subheader="Subtitle" press="tomaster" frameType= "TwoByHalf">
+		<TileContent id="tc1" unit="EUR" footer="Current Quarter">
+			<ImageContent id="ic1" src="sap-icon://home-share" />
+		</TileContent>
+	</GenericTile>
+
+    <GenericTile id="gc2" class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Purchase Order"
+		subheader="Subtitle" press="topo" frameType= "TwoByHalf">
+		<TileContent id="tc2" unit="EUR" footer="Current Quarter">
+			<ImageContent id="ic2" src="sap-icon://home-share" />
+		</TileContent>
+	</GenericTile>
+
+       <GenericTile id="gc3" class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Goods Receipt"
+		subheader="Subtitle" press="togr" frameType= "TwoByHalf">
+		<TileContent id="tc3" unit="EUR" footer="Current Quarter">
+			<ImageContent id="ic3" src="sap-icon://home-share" />
+		</TileContent>
+	</GenericTile>
+
+       <GenericTile id="gc4" class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Invoices"
+		subheader="Subtitle" press="toinv" frameType= "TwoByHalf">
+		<TileContent id="tc4" unit="EUR" footer="Current Quarter">
+			<ImageContent id="ic4" src="sap-icon://home-share" />
+		</TileContent>
+	</GenericTile>
+
+
+       <GenericTile id="gc5" class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Audit"
+		subheader="Subtitle" press="press" frameType= "TwoByHalf">
+		<TileContent id="tc5" unit="EUR" footer="Current Quarter">
+			<ImageContent id="ic5" src="sap-icon://home-share" />
+		</TileContent>
+	</GenericTile>
+
+
+    </content>
+    </Page>
+</mvc:View>

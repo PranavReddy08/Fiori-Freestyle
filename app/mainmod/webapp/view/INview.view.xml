@@ -1,0 +1,48 @@
+<mvc:View xmlns:smarttable="sap.ui.comp.smarttable" controllerName="com.main.mainmod.controller.INview"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Page id="invpage">
+    <content>
+    <IconTabBar id="INtab"
+    expandable="true">
+    <items>
+    <IconTabFilter id="if1"
+    icon="sap-icon://group"
+    key="Vendor"
+    iconColor="Default"
+    text="Vendor">
+    <content>
+      <smarttable:SmartTable id="INHeader"
+                            entitySet="InvHead"
+                            exportType="UI5ClientPDF"
+                            enableExport="true"
+                            enableAutoBinding="true"
+                            initiallyVisibleFields="inv_header_id,inv_header_invnumber,inv_header_vendor_id,inv_header_vendor,inv_header_refpo,inv_header_gr,inv_header_date,inv_header_postdate,inv_header_cuky_cuky,inv_header_totalamt_before,inv_header_status,inv_header_taxamt,inv_header_total_amount,inv_header_reason_rejection,inv_header_aspect_postedat,inv_header_aspect_postedby,inv_header_aspect_verifiedat,inv_header_aspect_verifiedby" >
+    </smarttable:SmartTable>
+    </content>
+    </IconTabFilter>
+
+    <IconTabFilter id="INItemtab"
+    icon="sap-icon://group"
+    iconColor="Default"
+    text="Material"
+    >
+    <content>
+    <smarttable:SmartTable id="INitem"
+                            entitySet="InvItem"
+                            exportType="UI5ClientPDF"
+                            enableExport="true"
+                            enableAutoBinding="true"
+                            initiallyVisibleFields="inv_item_id,inv_id,inv_item_po_id,inv_item_lineitem,inv_item_refgr,inv_item_quaninv_order_quan,inv_item_uom_uom,inv_item_netprice,inv_item_discount,inv_item_gst,inv_item_netamt,inv_item_taxamt,inv_item_totalamt" >
+    </smarttable:SmartTable>
+    
+    </content>
+    </IconTabFilter>
+    </items>
+    </IconTabBar>
+    
+    </content>
+    </Page>
+
+
+</mvc:View>

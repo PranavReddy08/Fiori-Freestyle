@@ -1,0 +1,60 @@
+<mvc:View
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:smarttable="sap.ui.comp.smarttable"
+    controllerName="com.main.mainmod.controller.POview">
+
+    <Page id="POpage">
+        <content>
+
+            <IconTabBar id="POtab" expandable="true">
+
+                <items>
+
+                    <!-- ================= PO HEADER ================= -->
+                    <IconTabFilter
+                        id="pf1"
+                        key="Header"
+                        icon="sap-icon://group"
+                        text="Purchase Order Header">
+
+                        <smarttable:SmartTable
+                            id="POHeader"
+                            entitySet="POhead"
+                            tableType="Table"
+                            enableAutoBinding="true"
+                            
+                            exportType="UI5ClientPDF"
+                            enableExport="true"
+                            initiallyVisibleFields="po_id,po_number,po_vm_id,vendor,po_coco,po_org,po_curr_cuky,po_doc_date,po_delivery_date,po_payment_terms_vendor,po_payment_terms_vendor_date,po_total_value,po_status,po_remarks,po_approved_po_approvedby,po_approved_po_approvedat">
+                        </smarttable:SmartTable>
+
+                    </IconTabFilter>
+
+                    <!-- ================= PO ITEMS ================= -->
+                    <IconTabFilter
+                        id="POItemtab"
+                        key="Item"
+                        icon="sap-icon://detail-view"
+                        text="PO Items">
+
+                        <smarttable:SmartTable
+                            id="POitem"
+                            entitySet="POItem"
+                            tableType="Table"
+                            enableAutoBinding="false"
+                            exportType="UI5ClientPDF"
+                            enableExport="true"
+                            initiallyVisibleFields="po_id,po_lineitem_number,po_item_material_id,po_item_materials,po_item_materialsdesc,po_item_quan_order_quan,po_item_uom_uom,po_item_netprice,po_item_discount,po_item_gst,po_item_netprice_value,po_item_netprice_value2,po_item_received_quan,po_item_open_quan,po_item_status">
+                        </smarttable:SmartTable>
+
+                    </IconTabFilter>
+
+                </items>
+
+            </IconTabBar>
+
+        </content>
+    </Page>
+
+</mvc:View>

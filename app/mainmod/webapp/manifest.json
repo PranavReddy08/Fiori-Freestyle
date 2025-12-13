@@ -1,0 +1,165 @@
+{
+  "_version": "1.76.0",
+  "sap.app": {
+    "id": "com.main.mainmod",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "0.0.1"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "resources": "resources.json",
+    "sourceTemplate": {
+      "id": "@sap/generator-fiori:basic",
+      "version": "1.20.0",
+      "toolsId": "53a5bea7-d8d7-4e42-9d04-0879a0062188"
+    },
+    "dataSources": {
+      "mainService": {
+        "uri": "/odata/v2/main/",
+        "type": "OData",
+        "settings": {
+          "annotations": [],
+          "odataVersion": "2.0"
+        }
+      }
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "flexEnabled": true,
+    "dependencies": {
+      "minUI5Version": "1.143.2",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "com.main.mainmod.i18n.i18n"
+        }
+      },
+      "": {
+        "dataSource": "mainService",
+        "preload": true,
+        "settings": {
+          "operationMode": "Server",
+          "autoExpandSelect": true,
+          "earlyRequests": true
+        }
+      }
+    },
+    "resources": {
+      "css": [
+        {
+          "uri": "css/style.css"
+        }
+      ]
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "controlAggregation": "pages",
+        "controlId": "app",
+        "transition": "slide",
+        "type": "View",
+        "viewType": "XML",
+        "path": "com.main.mainmod.view",
+        "async": true,
+        "viewPath": "com.main.mainmod.view"
+      },
+      "routes": [
+        {
+          "name": "RouteMainview",
+          "pattern": ":?query:",
+          "target": [
+            "TargetMainview"
+          ]
+        },
+        {
+          "name": "MasterRoute",
+          "pattern": "master",
+          "target": [
+            "TargetMaster"
+          ]
+        },
+        {
+          "name": "PORoute",
+          "pattern": "purchaseorder",
+          "target": [
+            "TargetPO"
+          ]
+        },
+        {
+          "name": "INVRoute",
+          "pattern": "invoice",
+          "target": [
+            "TargetINV"
+          ]
+        },
+        {
+          "name": "GRRoute",
+          "pattern": "goodsreceipt",
+          "target": [
+            "TargetGR"
+          ]
+        }
+
+
+      ],
+      "targets": {
+        "TargetMainview": {
+          "id": "Mainview",
+          "name": "Mainview"
+        },
+        "TargetMaster":{
+          "id": "MasterView",
+          "name": "Master"
+          },
+          "TargetPO": {
+          "id": "POView",
+          "name": "POview"
+
+          },
+          "TargetINV":{
+          "id": "INVView",
+          "name": "INview"
+          },
+          "TargetGR":{
+            "id": "GRView",
+          "name": "GRview"
+          }
+        
+      }
+    },
+    "rootView": {
+      "viewName": "com.main.mainmod.view.App",
+      "type": "XML",
+      "id": "App",
+      "async": true
+    }
+  }
+}

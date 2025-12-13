@@ -1,0 +1,16 @@
+<mvc:View xmlns:smarttable="sap.ui.comp.smarttable" controllerName="master.controller.Master"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+    <content>
+    <smarttable:SmartTable id="master"
+                            entitySet="Vendors"
+                            tableType="ResponsiveTable"
+                            enableExport="true"
+                            exportType="UI5ClientPDF"
+                            enableAutoBinding="true"
+                            initiallyVisibleFields="vm_id,vm_code,vm_firstname,vm_lastname,vm_addresses_vm_street,vm_addresses_vm_city,vm_addresses_vm_state,vm_addresses_vm_country,vm_addresses_vm_postal,vm_gstno,vm_person,vm_email,vm_payments,is_Active">
+    </smarttable:SmartTable>
+    </content>
+    </Page>
+</mvc:View>
