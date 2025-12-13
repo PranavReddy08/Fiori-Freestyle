@@ -3,8 +3,10 @@
   "version": "1.0.0",
   "description": "A simple CAP project.",
   "dependencies": {
+    "@cap-js-community/odata-v2-adapter": "^1.15.7",
     "@cap-js/hana": "^2",
     "@sap/cds": "^9",
+    "@ui5/cli": "^4.0.38",
     "express": "^4"
   },
   "devDependencies": {
@@ -20,7 +22,10 @@
     "watch-invh": "cds watch --open invh/index.html?sap-ui-xx-viewCache=false --livereload false",
     "watch-gcr": "cds watch --open gcr/index.html?sap-ui-xx-viewCache=false --livereload false",
     "watch-aud": "cds watch --open aud/index.html?sap-ui-xx-viewCache=false --livereload false",
-    "watch-auds": "cds watch --open auds/index.html?sap-ui-xx-viewCache=false --livereload false"
+    "watch-auds": "cds watch --open auds/index.html?sap-ui-xx-viewCache=false --livereload false",
+    "watch-audit": "cds watch --open audit/index.html?sap-ui-xx-viewCache=false --livereload false",
+    "watch-master": "cds watch --open master/index.html?sap-ui-xx-viewCache=false --livereload false",
+    "watch-mainmod": "cds watch --open com.main.mainmod/index.html?sap-ui-xx-viewCache=false --livereload false"
   },
   "private": true,
   "workspaces": [
@@ -35,7 +40,8 @@
     "app/gcr",
     "app/aud",
     "app/aud",
-    "app/auds"
+    "app/auds",
+    "app/audit"
   ],
   "cds": {
     "requires": {
