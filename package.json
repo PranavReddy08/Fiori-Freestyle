@@ -7,10 +7,12 @@
     "@cap-js/hana": "^2",
     "@sap/cds": "^9",
     "@ui5/cli": "^4.0.38",
-    "express": "^4"
+    "express": "^4",
+    "@sap/xssec": "^4"
   },
   "devDependencies": {
     "@cap-js/sqlite": "^2",
+    "@sap/cds-dk": "^9",
     "cds-plugin-ui5": "^0.13.0"
   },
   "scripts": {
@@ -51,7 +53,8 @@
       "[production]": {
         "db": {
           "kind": "hana"
-        }
+        },
+        "auth": "xsuaa"
       }
     }
   }

@@ -1,0 +1,165 @@
+<mvc:View
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:form="sap.ui.layout.form"
+    xmlns:core="sap.ui.core"
+    xmlns:smarttable="sap.ui.comp.smarttable"
+    controllerName="com.main.mainmod.controller.pomainview">
+    <Page id="createPOPage" title="Create Purchase Order">
+        <content>
+            <form:SimpleForm 
+                id="poCreateForm"
+                editable="true"
+                layout="ResponsiveGridLayout"
+                labelSpanXL="4"
+                labelSpanL="4"
+                labelSpanM="4"
+                labelSpanS="12"
+                adjustLabelSpan="false"
+                emptySpanXL="0"
+                emptySpanL="0"
+                emptySpanM="0"
+                emptySpanS="0"
+                columnsXL="2"
+                columnsL="2"
+                columnsM="1"
+                singleContainerFullSize="false">
+                
+                <form:content>
+                    
+                    <!-- Basic Information Section -->
+                    <core:Title id="basicInfoTitle" text="Basic Information"/>
+                    
+                    <Label id="poNumberLabel" text="PO Number" required="true"/>
+                    <Input 
+                        id="poNumberInput"
+                        value="{poModel>/po_number}" 
+                        type="Number"
+                        required="true"
+                        placeholder="Enter PO Number (1-9999999999)"/>
+                    
+                    <Label id="vendorCodeLabel" text="Vendor Code" required="true"/>
+                    <Input 
+                        id="vendorInput"
+                        value="{poModel>/vendor}" 
+                        maxLength="10"
+                        required="true"
+                        placeholder="Enter Vendor Code"/>
+                    
+                    <Label id="companyCodeLabel" text="Company Code" required="true"/>
+                    <Input 
+                        id="companyCodeInput"
+                        value="{poModel>/po_coco}" 
+                        maxLength="5"
+                        required="true"
+                        placeholder="Enter Company Code"/>
+                    
+                    <Label id="purchasingOrgLabel" text="Purchasing Org" required="true"/>
+                    <Input 
+                        id="purchasingOrgInput"
+                        value="{poModel>/po_org}" 
+                        maxLength="4"
+                        required="true"
+                        placeholder="Enter Purchasing Org"/>
+                    
+                    <!-- Financial Information Section -->
+                    <core:Title id="financialInfoTitle" text="Financial Information"/>
+                    
+                    <Label id="currencyLabel" text="Currency" required="true"/>
+                    <Input 
+                        id="currencyInput"
+                        value="{poModel>/po_curr_cuky}" 
+                        maxLength="3"
+                        required="true"
+                        placeholder="e.g., USD, EUR, INR"/>
+                    
+                    <Label id="totalValueLabel" text="Total Value"/>
+                    <Input 
+                        id="totalValueInput"
+                        value="{poModel>/po_total_value}" 
+                        type="Number"
+                        editable="false"
+                        description="Auto-calculated from line items"/>
+                    
+                    <Label id="paymentTermsLabel" text="Payment Terms"/>
+                    <Select 
+                        id="paymentTermsSelect"
+                        selectedKey="{poModel>/po_payment_terms}">
+                        <core:Item id="paymentTermsNet30" key="NET30" text="Net 30 Days"/>
+                        <core:Item id="paymentTermsNet45" key="NET45" text="Net 45 Days"/>
+                        <core:Item id="paymentTermsNet60" key="NET60" text="Net 60 Days"/>
+                        <core:Item id="paymentTermsCOD" key="COD" text="Cash on Delivery"/>
+                        <core:Item id="paymentTermsAdvance" key="ADVANCE" text="Advance Payment"/>
+                    </Select>
+                    
+                    <!-- Date Information Section -->
+                    <core:Title id="dateInfoTitle" text="Date Information"/>
+                    
+                    <Label id="docDateLabel" text="Document Date"/>
+                    <DatePicker 
+                        id="docDatePicker"
+                        value="{poModel>/po_doc_date}"
+                        valueFormat="yyyy-MM-dd"
+                        displayFormat="medium"
+                        placeholder="Select Document Date"/>
+                    
+                    <Label id="deliveryDateLabel" text="Delivery Date"/>
+                    <DatePicker 
+                        id="deliveryDatePicker"
+                        value="{poModel>/po_delivery_date}"
+                        valueFormat="yyyy-MM-dd"
+                        displayFormat="medium"
+                        placeholder="Select Delivery Date"/>
+                    
+                    <!-- Status and Additional Information -->
+                    <core:Title id="statusInfoTitle" text="Status and Additional Information"/>
+                    
+                    <Label id="statusLabel" text="Status"/>
+                    <Select 
+                        id="statusSelect"
+                        selectedKey="{poModel>/po_status}"
+                        enabled="false">
+                        <core:Item id="statusDraft" key="draft" text="Draft"/>
+                        <core:Item id="statusSubmitted" key="submitted" text="Submitted"/>
+                        <core:Item id="statusApproved" key="approved" text="Approved"/>
+                        <core:Item id="statusRejected" key="rejected" text="Rejected"/>
+                        <core:Item id="statusCancelled" key="cancelled" text="Cancelled"/>
+                    </Select>
+                    
+                    <Label id="remarksLabel" text="Remarks"/>
+                    <TextArea 
+                        id="remarksTextArea"
+                        value="{poModel>/po_remarks}" 
+                        rows="3"
+                        maxLength="255"
+                        placeholder="Enter any remarks or notes"/>
+                    
+                </form:content>
+            </form:SimpleForm>
+        </content>
+        
+        <!-- Action Buttons -->
+        <footer>
+            <OverflowToolbar id="footerToolbar">
+                <ToolbarSpacer id="footerSpacer"/>
+                <Button 
+                    id="saveDraftBtn"
+                    text="Save as Draft" 
+                    type="Emphasized"
+                    press=".onSaveDraft"
+                    icon="sap-icon://save"/>
+                <Button 
+                    id="submitBtn"
+                    text="Submit" 
+                    type="Accept"
+                    press=".onSubmit"
+                    icon="sap-icon://paper-plane"/>
+                <Button 
+                    id="cancelBtn"
+                    text="Cancel" 
+                    press=".onCancel"
+                    icon="sap-icon://decline"/>
+            </OverflowToolbar>
+        </footer>
+    </Page>
+</mvc:View>

@@ -126,6 +126,11 @@
           "target": [
             "TargetGR"
           ]
+        },
+        {
+          "name":"pocreateroute",
+          "pattern": "createPO",
+          "target":"Targetcreate"
         }
 
 
@@ -151,6 +156,10 @@
           "TargetGR":{
             "id": "GRView",
           "name": "GRview"
+          },
+          "Targetcreate":{
+            "id":"createpo",
+            "name":"pomainview"
           }
         
       }

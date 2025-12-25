@@ -1,0 +1,30 @@
+const URL = "https://cafedfe6trial-dev-pocap-srv.cfapps.us10-001.hana.ondemand.com/odata/v4/main/vendor";
+const AUTH = "Bearer eyJ0eXAiOiJKV1QiLCJqaWQiOiJINW11Y1NpY251Uk9oQ3NZTDR6ajV5ZlhwQTI0bG1Rbm44cGt5M2lyL3kwPSIsImFsZyI6IlJTMjU2Iiwiamt1IjoiaHR0cHM6Ly9jYWZlZGZlNnRyaWFsLmF1dGhlbnRpY2F0aW9uLnVzMTAuaGFuYS5vbmRlbWFuZC5jb20vdG9rZW5fa2V5cyIsImtpZCI6ImRlZmF1bHQtand0LWtleS0wMmY0Yzc1OWEyIn0.eyJzdWIiOiJiNDA2ZDI3MS1hYmJkLTRkMDQtOGM1ZC1iMDZmMmYxZmIzOTMiLCJ4cy51c2VyLmF0dHJpYnV0ZXMiOnt9LCJ1c2VyX25hbWUiOiJhbHVndWJlbGxpcHJhbmF2cmVkZHlAZ21haWwuY29tIiwib3JpZ2luIjoic2FwLmRlZmF1bHQiLCJpc3MiOiJodHRwczovL2NhZmVkZmU2dHJpYWwuYXV0aGVudGljYXRpb24udXMxMC5oYW5hLm9uZGVtYW5kLmNvbS9vYXV0aC90b2tlbiIsInhzLnN5c3RlbS5hdHRyaWJ1dGVzIjp7InhzLnJvbGVjb2xsZWN0aW9ucyI6WyJBZG1pbiAocG9jYXAgY2FmZWRmZTZ0cmlhbC1kZXYpIiwiU0FQIEhBTkEgQ2xvdWQgVmlld2VyIiwiQnVpbGQgQ29kZSBEZXZlbG9wZXIiLCJTQVAgSEFOQSBDbG91ZCBBZG1pbmlzdHJhdG9yIiwiQ0lDRCBTZXJ2aWNlIERldmVsb3BlciIsIlNBUCBIQU5BIENsb3VkIERhdGEgUHVibGlzaGVyIFZpZXdlciIsIlRNU19MYW5kc2NhcGVPcGVyYXRvcl9SQyIsIkNJQ0QgU2VydmljZSBBZG1pbmlzdHJhdG9yIiwiQWRtaW4gKENJQ0QgY2FmZWRmZTZ0cmlhbC1kZXYpIiwiQWRtaW4gKEV2ZW50cyBjYWZlZGZlNnRyaWFsLWRldikiLCJTQVAgSEFOQSBDbG91ZCBEYXRhIFB1Ymxpc2hlciBBZG1pbmlzdHJhdG9yIiwiVE1TX1ZpZXdlcl9SQyIsIlZpZXdlciAoRXZlbnRzIGNhZmVkZmU2dHJpYWwtZGV2KSIsIlN1YmFjY291bnQgQWRtaW5pc3RyYXRvciIsIkJ1aWxkIENvZGUgQWRtaW5pc3RyYXRvciIsIlNBUCBIQU5BIENsb3VkIFNlY3VyaXR5IEFkbWluaXN0cmF0b3IiLCJBZG1pbiAoVVNUU08tUFJBTkFWIGNhZmVkZmU2dHJpYWwtZGV2KSJdfSwiY2xpZW50X2lkIjoic2ItcG9jYXAtY2FmZWRmZTZ0cmlhbC1kZXYhdDU0NjEzNyIsImV4dF9hdHRyIjp7ImVuaGFuY2VyIjoiWFNVQUEiLCJzdWJhY2NvdW50aWQiOiIwMmFiNjU0YS05NGI2LTRhNmYtOGVmYy05ODMxMDBkNjY5MGYiLCJ6ZG4iOiJjYWZlZGZlNnRyaWFsIn0sInVzZXJfdXVpZCI6IjYwNDhiZmQ2LTMzMGMtNDc1OC04NzM0LWNkOGRhZTgzZTI5NiIsInppZCI6IjAyYWI2NTRhLTk0YjYtNGE2Zi04ZWZjLTk4MzEwMGQ2NjkwZiIsImdyYW50X3R5cGUiOiJwYXNzd29yZCIsImF6cCI6InNiLXBvY2FwLWNhZmVkZmU2dHJpYWwtZGV2IXQ1NDYxMzciLCJzY29wZSI6WyJvcGVuaWQiLCJwb2NhcC1jYWZlZGZlNnRyaWFsLWRldiF0NTQ2MTM3LkFkbWluIl0sImF1dGhfdGltZSI6MTc2NjU1MzAxOCwiZXhwIjoxNzY2NTUzOTE4LCJpYXQiOjE3NjY1NTMwMTgsImp0aSI6IjJmYjExMjdlMTJjYTQ0YjE4YjRlMzZiMTkxYWQwMjg3IiwiZW1haWwiOiJhbHVndWJlbGxpcHJhbmF2cmVkZHlAZ21haWwuY29tIiwiZ2l2ZW5fbmFtZSI6IkFsdWd1YmVsbGkiLCJhdWQiOlsic2ItcG9jYXAtY2FmZWRmZTZ0cmlhbC1kZXYhdDU0NjEzNyIsIm9wZW5pZCIsInBvY2FwLWNhZmVkZmU2dHJpYWwtZGV2IXQ1NDYxMzciXSwidXNlcl9pZCI6ImI0MDZkMjcxLWFiYmQtNGQwNC04YzVkLWIwNmYyZjFmYjM5MyIsImZhbWlseV9uYW1lIjoiUHJhbmF2IFJlZGR5IiwicmV2X3NpZyI6ImNkZmYxYjQ2IiwiY2lkIjoic2ItcG9jYXAtY2FmZWRmZTZ0cmlhbC1kZXYhdDU0NjEzNyJ9.ijRnlxUhqDPOj4EBGhE9YKh1Do-0K_iDyeNetCPcBpq1R-El4bXYBLE_drhSvT52qH9fX9uIyxi0XbR5jjJADGGLrS7i2rpJfoK7Eh_e5Fw3vYlMuEzdLeiGFNGhZSnjm-3eoxXfX7a3Ra7yFXx3M432w667Q2rhjiw9dEW-uQHLnVmGEQ0KHdjM-yseLCrrzHOJ59tTjRnMTpcjs5DDZRF8Cl8hTRRssH4x7XEPcZo98qKt1i_cDbhfks2WDzx18c-84UV2xL5EG4F3NBTPE9iHCXwBVnOqzQ1nPGeuqwbGESMmpa6vHjQMOnyoYlbCj-qCyMbwl9Xmn5LvQTTmIQ"
+const TOTAL = 5000;
+ 
+async function sendRequest(i) {
+  try {
+    const res = await fetch(URL, {
+      headers: {
+        Authorization: AUTH
+      }
+    });
+    const body = await res.text(); // or await res.json()
+console.log(`Request ${i}: ${res.status} | ${body}`);
+ 
+    // ✅ log only resolved values
+    console.log(`Request ${i}: ${res.status}`);
+  } catch (e) {
+    console.error(`Request ${i} failed:`, e.message);
+  }
+}
+ 
+(async () => {
+  console.time("LoadTest");
+ 
+  await Promise.all(
+    Array.from({ length: TOTAL }, (_, i) => sendRequest(i + 1))
+  );
+ 
+  console.timeEnd("LoadTest");
+})();

@@ -6,6 +6,9 @@
 
     <Page id="POpage">
         <content>
+        	<Button id="b1" text="Default"
+						press="oncreate"
+						ariaDescribedBy="defaultButtonDescription genericButtonDescription"/>
 
             <IconTabBar id="POtab" expandable="true">
 

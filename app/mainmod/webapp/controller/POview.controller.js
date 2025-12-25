@@ -57,5 +57,11 @@ sap.ui.define([
             // Switch to PO Items tab
             this.byId("POtab").setSelectedKey("Item");
         }
+        ,
+        oncreate:function(){
+            this.oRouter.navTo("pocreateroute");
+        }
+
+        
     });
 });

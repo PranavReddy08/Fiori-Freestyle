@@ -105,7 +105,7 @@ entity vendormaster : primary {
   @description : 'Vendor ID'
   @Common.Label : 'Vendor ID'
   @Core.Computed : false
-  @readonly
+   
   key vm_id : UUID not null;
 
   @title : 'Vendor Code'
@@ -164,7 +164,7 @@ entity mastermaterial : primary {
 
   @title : 'Material ID'
   @Common.Label : 'Material ID'
-  @readonly
+   
   key mm_id : UUID not null;
 
   @title : 'Material Code'
@@ -213,7 +213,7 @@ entity poheader : primary {
 
   @title : 'PO ID'
   @Common.Label : 'PO ID'
-  @readonly
+   
   key po_id : UUID not null;
 
   @title : 'PO Number'
@@ -257,7 +257,7 @@ entity poheader : primary {
 
   @title : 'Total Value'
   @Common.Label : 'Total Value'
-  @readonly
+   
   po_total_value : Integer default 0;
 
   @title : 'Status'
@@ -335,7 +335,7 @@ entity poitem : primary {
 
   @title : 'Net Price Value'
   @Common.Label : 'Net Price Value'
-  @readonly
+   
   po_item_netprice_value : Integer;
 
   @title : 'Net Price Value 2'
@@ -344,12 +344,12 @@ entity poitem : primary {
 
   @title : 'Received Quantity'
   @Common.Label : 'Received Quantity'
-  @readonly
+   
   po_item_received_quan : Integer default 0;
 
   @title : 'Open Quantity'
   @Common.Label : 'Open Quantity'
-  @readonly
+   
   po_item_open_quan : Integer default 0;
 
   @title : 'Item Status'
@@ -379,7 +379,7 @@ entity gr_header : managed {
 
   @title : 'GR ID'
   @Common.Label : 'GR ID'
-  @readonly
+   
   key gr_id : UUID not null;
 
   @title : 'GR Number'
@@ -424,7 +424,7 @@ entity gr_item : managed {
 
   @title : 'GR Item ID'
   @Common.Label : 'GR Item ID'
-  @readonly
+   
   key gr_item_id : UUID not null;
 
   @title : 'GR Header ID'
@@ -478,7 +478,7 @@ entity inv_header : primary {
 
   @title : 'Invoice Header ID'
   @Common.Label : 'Invoice Header ID'
-  @readonly
+   
   key inv_header_id : UUID not null;
 
   @title : 'Invoice Number'
@@ -517,7 +517,7 @@ entity inv_header : primary {
 
   @title : 'Total Amount Before Tax'
   @Common.Label : 'Total Amount Before Tax'
-  @readonly
+   
   inv_header_totalamt_before : Integer default 0;
 
   @title : 'Status'
@@ -526,12 +526,12 @@ entity inv_header : primary {
 
   @title : 'Tax Amount'
   @Common.Label : 'Tax Amount'
-  @readonly
+   
   inv_header_taxamt : Integer default 0;
 
   @title : 'Total Amount'
   @Common.Label : 'Total Amount'
-  @readonly
+   
   inv_header_total_amount : Integer default 0;
 
   @title : 'Reason for Rejection'
@@ -556,7 +556,7 @@ entity inv_item : primary {
 
   @title : 'Invoice Item ID'
   @Common.Label : 'Invoice Item ID'
-  @readonly
+   
   key inv_item_id : UUID not null;
 
   @title : 'Invoice Header ID'
@@ -602,17 +602,17 @@ entity inv_item : primary {
 
   @title : 'Net Amount'
   @Common.Label : 'Net Amount'
-  @readonly
+   
   inv_item_netamt : Integer default 0;
 
   @title : 'Tax Amount'
   @Common.Label : 'Tax Amount'
-  @readonly
+   
   inv_item_taxamt : Integer default 0;
 
   @title : 'Total Amount'
   @Common.Label : 'Total Amount'
-  @readonly
+   
   inv_item_totalamt : Integer default 0;
 
   // Associations
